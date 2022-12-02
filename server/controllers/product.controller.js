@@ -5,7 +5,11 @@ module.exports.createProduct = (request,response) => {
     .catch(err => response.json(err))
 };
 module.exports.getAllProducts = (req,res) => {
-  Product.find()
-    .then( products => res.json(products))
-    .catch( err => res.json(err))
+  Product.find({})
+    .then( products => {
+      console.log(products);
+      res.json(products)})
+    .catch( err => {
+      console.log(err);
+      res.json(err)})
 }
