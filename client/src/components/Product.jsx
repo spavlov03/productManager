@@ -20,22 +20,22 @@ const Product = () => {
       .catch(err=>console.log(err))
   }
   return (
-    <div>
+    <div className='d-flex flex-column w-50 mx-auto'>
       <h1>Product Manager</h1>
       <form onSubmit={onSubmitHandler}>
-        <p>
+        <p className='bg-light w-50 mx-auto d-flex justify-content-between p-2'>
           <label>Title</label>
           <input type="text" onChange={ (e) => setTitle(e.target.value)}/>
         </p>
-        <p>
+        <p className='bg-light w-50 mx-auto d-flex justify-content-between p-2'>
           <label>Price</label>
           <input type="text" onChange={ (e) => setPrice(e.target.value)}/>
         </p>
-        <p>
+        <p className='bg-light w-50 mx-auto d-flex justify-content-between p-2'>
           <label>Description</label>
           <input type="text" onChange={ (e) => setDescription(e.target.value)}/>
         </p>
-        <input type="submit" value="Create"/>
+        <input className="btn btn-light w-25" type="submit" value="Create"/>
       </form>
       
     </div>
