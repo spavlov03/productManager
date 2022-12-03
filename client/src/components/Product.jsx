@@ -1,7 +1,8 @@
 import {useState} from 'react'
 import axios from 'axios';
 
-const Product = () => {
+const Product = (props) => {
+  const {products,setProducts} = props;
   const [title,setTitle] = useState("");
   const [price,setPrice] = useState(0); 
   const [description,setDescription] = useState("");
@@ -16,6 +17,7 @@ const Product = () => {
       .then(res=>{
         console.log(res); 
         console.log(res.data); 
+        setProducts([...products,res.data])
       })
       .catch(err=>console.log(err))
   }
@@ -42,4 +44,4 @@ const Product = () => {
   )
 }
 
-export default Product
+export default Product;

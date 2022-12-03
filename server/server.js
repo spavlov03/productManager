@@ -8,7 +8,9 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
 require('./config/mongoose.config');
-require('./routes/product.routes')(app);
+
+const routes = require('./routes/product.routes')
+routes(app);
 
 app.listen(PORT,()=>{
   console.log(`Server is up and running on port ${PORT}`)
