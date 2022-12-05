@@ -15,8 +15,8 @@ const Product = (props) => {
       description
     })
       .then(res=>{
-        console.log(res); 
-        console.log(res.data); 
+        // console.log(res); 
+        // console.log(res.data); 
         setProducts([...products,res.data])
       })
       .catch(err=>console.log(err))

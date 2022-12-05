@@ -3,14 +3,20 @@ import Main from './views/Main'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Product from './components/Product';
 import ProductDetails from './components/ProductDetails'
+import ProductUpdate from './components/ProductUpdate';
+import {useState} from 'react'
+
 
 function App() {
+  
+  
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route element={<Main />} path="/"/>
-          <Route element={<ProductDetails />} path="/:id"/>
+          <Route element={<Main/>} path="/"/>
+          <Route element={<ProductDetails/>} path="/:id"/>
+          <Route element={<ProductUpdate />} path="/edit/:id"/>
         </Routes>
       </BrowserRouter>
     </div>
