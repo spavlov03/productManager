@@ -22,3 +22,12 @@ module.exports.getOneProduct = (req,res) => {
       console.log(err);
       res.json(err)})
 }
+module.exports.editProduct =(req,res) => {
+  Product.findOneAndUpdate({_id:req.params.id},req.body)
+    .then(product => {
+      console.log(product); 
+      res.json(product)})
+    .catch(err=> { 
+      console.log(err); 
+      res.json(err)})
+}
