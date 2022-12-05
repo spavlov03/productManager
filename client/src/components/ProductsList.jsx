@@ -19,7 +19,7 @@ const ProductsList = (props) => {
       setProducts(res.data);
     })
     .catch(err=> console.log(err))
-  },[])
+  },[setProducts])
   return (
     <div>
       {

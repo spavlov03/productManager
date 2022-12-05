@@ -14,7 +14,7 @@ const ProductDetails = (props) => {
       setProduct(res.data);
     })
     .catch(err=>console.log(err));
-  },[])
+  },[id])
   const deleteProduct = (productId) => { 
     axios.delete(`http://localhost:8000/api/products/${productId}`)
       .then(()=>{
@@ -27,8 +27,8 @@ const ProductDetails = (props) => {
       <p className='fw-bold'>{product.title}</p>
       <p>Price: ${product.price}</p>
       <p>Description: {product.description}</p>
-      <Link className='ms-1 btn btn-outline-warning' to={`/edit/${product._id}`}>Edit</Link> 
-      <button className='btn btn-outline-danger' onClick={(e) => {deleteProduct(product._id)}} >Delete</button>
+      <Link className='btn btn-outline-warning' to={`/edit/${product._id}`}>Edit</Link> 
+      <button className='ms-1 btn btn-outline-danger' onClick={(e) => {deleteProduct(product._id)}} >Delete</button>
     </div>
   )
 }

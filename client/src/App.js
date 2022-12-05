@@ -1,10 +1,9 @@
 import './App.css';
 import Main from './views/Main'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
-import Product from './components/Product';
 import ProductDetails from './components/ProductDetails'
 import ProductUpdate from './components/ProductUpdate';
-import {useState} from 'react'
+
 
 
 function App() {

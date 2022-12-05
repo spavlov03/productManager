@@ -17,7 +17,7 @@ const ProductUpdate = (props) => {
         setDescription(res.data.description); 
       })
       .catch(err=>console.log(err))
-  },[])
+  },[id])
   const updateProduct = (e) => { 
     e.preventDefault(); 
     axios.put(`http://localhost:8000/api/product/edit/${id}`,{
